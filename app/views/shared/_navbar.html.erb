@@ -1,0 +1,45 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid container pb-1 border-bottom">
+    <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "", style: 'height:30px;width:auto;' %>
+      <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto flex-grow-1">
+        <%# Menu %>
+
+          <% if user_signed_in? %>
+
+
+          <li class="nav-item">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          </li>
+
+
+
+          </ul>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <%= link_to "Log out", destroy_user_session_path, class: "btn btn-primary", data: {turbo_method: :delete} %>
+              </div>
+            </li>
+
+          <% else %>
+        </ul>
+        <%# login buton %>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

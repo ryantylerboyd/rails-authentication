@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to the devise template.</h1>
+<p>The root has been set to pages#home</p>
+<p>You can now login and create an account</p>
+<a href="https://github.com/heartcombo/devise"> Link to devise github</a>
+<p>TO SEE THE HIDDEN MESSAGES LOGIN</p>
+<% if user_signed_in? %>
+<p>YOU ARE CURRENTLY SIGNED IN</p>
+<p><%=current_user.email %></p>
+<% else %>
+<p>YOU ARE CURRENTLY NOT SIGNED IN</p>
+<% end %>
